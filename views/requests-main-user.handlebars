@@ -1,0 +1,26 @@
+<h2 class="page-header">Requests</h2>
+
+<body class="body-inv-rel">
+
+<hr>
+
+<div class="parent-alert-box">
+</div>
+
+<div id="container">
+    <ul class="ul-inv-rel">
+        {{#if collection-requests}}
+            {{#each collection-requests}}
+                <li class="li-inv-rel"><span id="span-inv-rel" data-mongo-id= "{{this._id}}" href="http://localhost:8888/users/requests-main-user/{{this._id}}">
+                <i class="fa fa-trash"></i></span> <span>Status: </span>
+                    <span id="pending-inv">&ensp;{{this.status}}&emsp;&emsp;&emsp;</span> &ensp;E-mail: &nbsp;{{ this.main_user_email }} </li>
+            {{/each}}
+        {{else}}
+            <p id="no-inv-rel">No pending requests were found. If you would like to send a request
+                please click on the "Send request to a main user" button in the navigation bar.</p>
+        {{/if}}
+    </ul>
+</div>
+<script src="http://localhost:8888/js/requests-main-user.js"></script>
+
+</body>

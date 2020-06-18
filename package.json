@@ -1,0 +1,31 @@
+{
+  "name": "loginapp",
+  "version": "1.0.0",
+  "description": "Simple authentication system (Login + Registration).",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrijen Ribic",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "nexmo": "^2.1.1",
+    "nodemailer": "^4.1.0",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "passport-remember-me": "0.0.1"
+  }
+}

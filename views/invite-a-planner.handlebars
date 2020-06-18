@@ -1,0 +1,23 @@
+<h2 class="page-header">Invite a planner</h2>
+{{#if errors}}
+    {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+    {{/each}}
+{{/if}}
+<form method="post" action="/users/invite-a-planner">
+    <label>E-mail</label>
+    <div class="form-group has-feedback">
+        <input type="email" data-validation="email" class="form-control" id="invEmail" name="inviteEmail" placeholder="Enter e-mail of the planner">
+        <span class="fa fa-envelope form-control-feedback" area-hidden='true'></span>
+    </div>
+    <button type="submit" id="btn-send" class="btn btn-basic">invite</button>
+</form>
+
+<script>
+    $.validate({
+        lang: 'en'
+    });
+</script>
+
+
+

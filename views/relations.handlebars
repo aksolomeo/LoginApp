@@ -1,0 +1,24 @@
+<h2 class="page-header">Relations</h2>
+
+<body class="body-inv-rel">
+
+<hr>
+
+<div class="parent-alert-box">
+</div>
+
+<div id="container">
+    <ul class="ul-inv-rel">
+        {{#if collection-relations}}
+            {{#each collection-relations}}
+                <li class="li-inv-rel"><span id="span-inv-rel" data-mongo-id= "{{this._id}}" href="http://localhost:8888/users/relations/{{this._id}}">
+                    <i class="fa fa-trash"></i></span>&nbsp;<span class="fa fa-user-circle-o"></span>&emsp;{{ this.firstname }}&nbsp;{{ this.lastname }} </li>
+            {{/each}}
+        {{else}}
+            <p id="no-inv-rel">You have no relations at the moment.</p>
+        {{/if}}
+    </ul>
+</div>
+<script src="http://localhost:8888/js/relations.js"></script>
+
+</body>

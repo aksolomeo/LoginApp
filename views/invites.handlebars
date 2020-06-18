@@ -1,0 +1,27 @@
+<h2 class="page-header">Invites</h2>
+
+<body class="body-inv-rel">
+
+<hr>
+
+<div class="parent-alert-box">
+</div>
+
+<div id="container">
+    <ul class="ul-inv-rel">
+        {{#if collection-invites}}
+        {{#each collection-invites}}
+            <li class="li-inv-rel"><span id="span-inv-rel" data-mongo-id= "{{this._id}}" href="http://localhost:8888/users/invites/{{this._id}}">
+                <i class="fa fa-trash"></i></span> <span>Status: </span>
+                <span id="pending-inv">&ensp;{{this.status}}&emsp;&emsp;&emsp;</span> &ensp;E-mail: &nbsp;{{ this.planner_email }} </li>
+        {{/each}}
+        {{else}}
+            <p id="no-inv-rel">No pending invites were found. If you would like to send an invite
+                please click on the "Invite a planner" button in the navigation bar.</p>
+        {{/if}}
+    </ul>
+</div>
+<script src="http://localhost:8888/js/invites.js"></script>
+
+</body>
+

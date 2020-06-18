@@ -1,0 +1,26 @@
+<h2 class="page-header">Invites</h2>
+
+<body class="body-inv-rel">
+
+<hr>
+
+<div class="parent-alert-box">
+</div>
+
+<div id="container">
+    <ul class="ul-inv-rel">
+        {{#if collection-invites}}
+            {{#each collection-invites}}
+                <li class="li-inv-rel"><span id="span-inv-rel-plan" data-mongo-id= "{{this._id}}" href="http://localhost:8888/users/main-user-invites/{{this._id}}">
+                <i class="fa fa-times"></i></span> <span id="span-inv-rel-plan-approve" data-mongo-id= "{{this._id}}" href="http://localhost:8888/users/main-user-invites/{{this._id}}"><i class="fa fa-check"></i></span> <span>Status: </span>
+                    <span id="pending-inv">&ensp;{{this.status}}&emsp;&emsp;&emsp;</span>
+                    from: &ensp;{{this.mainUser}}&emsp;&emsp;&emsp; </li>
+            {{/each}}
+        {{else}}
+            <p id="no-inv-rel">You have no pending invites at the moment.</p>
+        {{/if}}
+    </ul>
+</div>
+<script src="http://localhost:8888/js/main-user-invites.js"></script>
+
+</body>

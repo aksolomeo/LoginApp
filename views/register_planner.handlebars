@@ -1,0 +1,102 @@
+<h2 class="page-header">Planner Registration<span id="span-header">&ensp;for: <span id="span-main-user">&ensp;{{this.user}}</span></span></h2>
+<head>
+</head>
+{{#if errors}}
+    {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+    {{/each}}
+{{/if}}
+
+<form method="post" action="/users/register/?_id={{this.id}}">
+    <table class="test" style="width:100%">
+        <tr>
+            <th>
+                <label id="lbl-asterisk">Username</label>
+                <div class="form-group">
+                    <input data-validation="length" data-validation-length="3-12"
+                           data-validation-error-msg="Username must be between 3-12 characters" type="text"
+                           class="form-control" placeholder="Username" name="username">
+                    <span class="fa fa-user form-control-feedback" area-hidden='true'></span>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="form-group">
+                    <label id="lbl-asterisk">First Name</label>
+                    <input data-validation="required" data-validation-error-msg="First name is a required field"
+                           type="text" class="form-control" placeholder="First Name" name="firstname">
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label id="lbl-asterisk">Last Name</label>
+                    <input data-validation="required" data-validation-error-msg="Last name is a required field"
+                           type="text" class="form-control" placeholder="Last Name" name="lastname">
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="form-group has-feedback">
+                    <label id="lbl-asterisk">E-mail</label>
+                    <input data-validation="email" data-validation-error-msg="Please enter a valid e-mail address"
+                           type="email" class="form-control" placeholder="E-mail" name="email">
+                    <span id="envelope-reg" class="fa fa-envelope form-control-feedback" area-hidden='true'></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group has-feedback">
+                    <label id="lbl-asterisk">Date Of Birth</label>
+                    <input type="text" id="bootstrap-datepicker" class="form-control floating-label"
+                           placeholder="Select Date"
+                           name="bday" required>
+                    <span id="btn" style="cursor:pointer;" class="fa fa-calendar form-control-feedback"></span>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="form-group">
+                    <label id="lbl-asterisk">Password</label>
+                    <input data-validation="length" data-validation-length="min8"
+                           data-validation-error-msg="Password should be at least 8 characters long" type="password"
+                           class="form-control" placeholder="Password" name="password">
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label id="lbl-asterisk">Confirm Password</label>
+                    <input data-validation="confirmation" data-validation-confirm="password"
+                           data-validation-error-msg="Please make sure that passwords match" type="password"
+                           class="form-control" placeholder="Password" name="password2">
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <button type="submit" class="btn btn-basic">Submit</button>
+            </th>
+        </tr>
+    </table>
+</form>
+
+<script type="text/javascript">
+    $('#bootstrap-datepicker').bootstrapMaterialDatePicker({
+        format: 'MM/DD/YYYY',
+        maxDate: moment(),
+        weekStart: 0,
+        time: false
+    });
+
+
+    $.validate({
+        lang: 'en',
+        // validateOnBlur: false,
+        modules: 'security, date',
+        onError: function ($form) {
+            console.log('Registration failed')
+        },
+    });
+
+</script>

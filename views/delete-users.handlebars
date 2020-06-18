@@ -1,0 +1,28 @@
+<h2 class="page-header">List Of Users</h2>
+
+<body class="body-inv-rel">
+
+<hr>
+
+<div class="parent-alert-box">
+</div>
+
+<div id="container">
+    <ul class="ul-inv-rel">
+        {{#if collection-users}}
+            {{#each collection-users}}
+                <li class="li-inv-rel"><span id="span-inv-rel" data-mongo-id= "{{this._id}}" href="http://localhost:8888/users/delete-users/{{this._id}}">
+                <i class="fa fa-trash"></i></span> <span>Name: </span>
+                    <span>&ensp;{{this.firstname}}&ensp; {{this.lastname}} &emsp;&emsp;&emsp;</span> &ensp;E-mail: &nbsp;{{ this.email }} &emsp;&emsp;Type: &nbsp;{{ this.userType }}</li>
+            {{/each}}
+        {{else}}
+            <p id="no-inv-rel">There is no users in the database.</p>
+        {{/if}}
+    </ul>
+</div>
+<script src="http://localhost:8888/js/delete-users.js"></script>
+
+</body>
+
+
+<span id="span-inv-rel" data-mongo-id= "{{this._id}}" href="http://localhost:8888/users/delete-users/{{this._id}}"></span>
